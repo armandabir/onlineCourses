@@ -1,0 +1,11 @@
+.favorits{
+    @apply h-3/5;
+    background-color: #fff;
+    h2{
+        @apply text-2xl text-green-800 font-semibold text-center p-7 my-5;
+    }
+
+    .cardContainer{
+        @apply container mx-auto;
+    }
+}

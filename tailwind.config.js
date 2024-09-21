@@ -8,7 +8,8 @@ export default {
     extend: {
       height:{
         '120vh':'120vh',
-        '80vh':'80vh'
+        '80vh':'80vh',
+        '18':'75px'
       },
       fontSize:{
         'xxs':['8px', '14px']

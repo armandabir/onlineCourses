@@ -1,0 +1,15 @@
+.courses{
+    @apply h-3/5 pb-10 md:p-10 ;
+    background-color: #3F67450F;
+
+    h2{
+        @apply text-2xl text-green-800 font-semibold text-center p-7 my-5;
+    }
+
+    .cardContainer{
+        @apply container mx-auto grid grid-cols-2 md:grid-cols-3 gap-20 p-10;
+        .card{
+            @apply mx-8;
+        }
+    }
+}

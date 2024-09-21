@@ -1,0 +1,27 @@
+.card{
+    @apply p-3 text-xxs shadow-2xl rounded-3xl md:p-5 md:text-base xl:text-lg;
+    background-color: white;
+    .imgContainer{
+        @apply text-center;
+
+        img{
+            @apply mx-auto;
+        }
+    }
+
+    .content{
+        @apply p-2 md:p-5 ;
+    }
+
+    .price{
+        @apply flex mt-2;
+    }
+
+    P{
+       @apply md:text-sm font-semibold my-2; 
+    }
+
+    h3{
+        @apply md:text-sm
+    }
+}

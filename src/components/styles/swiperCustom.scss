@@ -1,0 +1,23 @@
+.swiper-button-prev,
+.swiper-button-next {
+    background-color: white;
+    border-radius: 50%;
+    width: calc(var(--swiper-navigation-size) / 44 * 30);
+    height: 30px;
+    color: #000;
+    &:after{
+       font-size: 18px; 
+    }
+
+}
+
+
+.swiper-button-next:hover{
+    background-image: linear-gradient(to bottom right, #FD661FD9, #FFA337);
+
+}
+
+.swiper-button-prev:hover{
+    background-image: linear-gradient(to bottom right, #FD661FD9, #FFA337);
+
+}
