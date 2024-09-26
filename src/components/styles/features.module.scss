@@ -1,0 +1,33 @@
+.features{
+    background-color: #3F67452E;
+   .containers{
+        @apply grid grid-cols-3 mx-auto;
+   }
+
+   .imgContainer{
+        @apply text-center mt-auto;
+   }
+  
+    .rightSide{
+        @apply p-1 md:p-5;
+
+         h2{
+            @apply text-xxs font-semibold md:text-base;
+          }
+         p{
+               @apply text-xxs md:text-xs;
+          }
+    } 
+    
+    .items{
+        @apply flex p-1 md:p-2 md:my-10;
+    }
+
+
+   .leftSide{
+        @apply p-1 md:p-5;
+   }
+
+  
+
+}

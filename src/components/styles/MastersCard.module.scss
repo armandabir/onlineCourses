@@ -1,0 +1,28 @@
+.cardContainer{
+    @apply p-3 text-xxs shadow-xl rounded-3xl xl:text-lg;
+    background-color: white;
+
+    .imgContainer{
+        @apply text-center;
+
+        img{
+            @apply mx-auto;
+        }
+    }
+
+    .content{
+        @apply p-2 text-center ;
+    }
+
+    P{
+       @apply md:text-xxs xl:text-sm  my-2; 
+    }
+
+    h3,h4{
+        @apply text-xxs xl:text-sm font-semibold;
+    }
+
+    h4{
+        @apply text-green-700;
+    }
+}

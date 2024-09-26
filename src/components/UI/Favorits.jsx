@@ -22,7 +22,7 @@ export default function Favorits (){
                     pagination={{clickable:true}}
                     // autoplay={{delay:1000}}
                     breakpoints={{640:{ slidesPerView: 4,
-                        spaceBetween: 40}}}
+                        spaceBetween: 30}}}
                 >
                     <SwiperSlide>
                         <Card title=" آموزش برنامه نویسی جاوا اسکریپت ب..." img={img1} stars={4}  price="499,000" vote={120} fav/>

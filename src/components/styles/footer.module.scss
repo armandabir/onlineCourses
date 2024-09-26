@@ -1,0 +1,41 @@
+.footer{
+    @apply grid grid-cols-4 mx-auto p-10 text-white;
+    background-color: #609468;
+     h2{
+        @apply text-black text-sm md:text-base my-4 font-semibold;
+     }
+
+     p{
+        @apply text-xxs md:text-base my-4;
+     }
+    .logoText{
+        color: #3F6745C9;
+    }
+    .logo{
+        width: 40px;
+    }
+
+    .links{
+        @apply px-5 xl:px-20;
+        ul li{
+            @apply text-xxs md:text-base my-4;
+        }
+    }
+
+    .category{
+        @apply px-5 xl:px-20;
+        ul li{
+            @apply text-xxs md:text-base my-4;
+        }
+    }
+
+
+    .customer{
+        @apply text-xxs md:text-base xl:px-10;
+        input{
+            @apply w-full rounded-lg h-5 md:h-10;
+        }
+
+    }
+
+}
