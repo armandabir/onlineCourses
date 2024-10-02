@@ -8,8 +8,11 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import {fab} from "@fortawesome/free-brands-svg-icons"
+import { useContext } from "react"
+import BergerMenuContext from "../../store/BergerMenuContext"
 library.add(fas,fab)
 export default function Header(){
+    const {onOpen}=useContext(BergerMenuContext)
     return (
         <>
       
@@ -21,7 +24,7 @@ export default function Header(){
                 <img  src={boy} alt="" />
             </div>
         </div>
-        <header className="xl:h-screen md:h-2/5">
+        <header>
             <nav className="container mx-auto columns-2 xl:columns-3">
                 <div className="flex">
                     <span className={`${styles.logoText} text-lg font-bold xl:text-3xl`}>Logo</span>
@@ -37,7 +40,7 @@ export default function Header(){
                     </ul>
                 </div>
                 <div className="xl:hidden text-left">
-                    <img className="mr-auto" src={hamberger} alt="hamberger-bt" />
+                    <img onClick={onOpen} className="mr-auto" src={hamberger} alt="hamberger-bt" />
                 </div>
                 <div className={`${styles.login} hidden xl:flex justify-end`}>
                     <span className="ml-2 p-1">ورود</span>

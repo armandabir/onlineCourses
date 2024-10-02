@@ -7,10 +7,17 @@ import Header from "../components/UI/Header";
 import Masters from "../components/UI/Masters";
 import Footer from "../components/UI/Footer";
 import HamMenu from "../components/UI/HamMenu";
+import menuContext from "../store/BergerMenuContext";
+import { useContext } from "react";
 export default function Home(){
+    const {menuState}=useContext(menuContext)
+    console.log(menuState)
     return (
         <>
-            <HamMenu/>
+            {
+                (menuState) && (<HamMenu/>)
+            }
+ 
             <Header/>
             <Categories/>
             <Favorits/>
