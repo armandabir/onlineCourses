@@ -7,8 +7,21 @@ import 'swiper/css/pagination';
 import './../styles/swiperCustom.scss'
 import MastersCard from "./MastersCard";
 import styles from "./../styles/masters.module.scss"
+import { useEffect, useState } from "react";
 
 export default function Masters(){
+    const [instructors,setInstructors]=useState([])
+    async function fetchInstructors() {
+        const res = await fetch("http://localhost:3030/instructors");
+        const data = await res.json();
+        setInstructors(data);
+
+    }
+
+    useEffect(()=>{
+        fetchInstructors()
+    },[])
+
     return (
         <div className={styles.masters}>
         <h2>مدرسین ما</h2>
@@ -23,28 +36,16 @@ export default function Masters(){
                 breakpoints={{640:{ slidesPerView: 4,
                     spaceBetween: 15}}}
             >
-                <SwiperSlide>
-                    <MastersCard img={img}/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <MastersCard img={img}/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <MastersCard img={img}/>
-                </SwiperSlide>
+                
 
-                <SwiperSlide>
-                    <MastersCard img={img}/>
-
-                </SwiperSlide>
-                <SwiperSlide>
-                    <MastersCard img={img}/>
-
-                </SwiperSlide>
-                <SwiperSlide>
-                    <MastersCard img={img}/>
-
-                </SwiperSlide>
+                {
+                    instructors.map((ins)=>
+                        <SwiperSlide key={ins.id}>
+                            <MastersCard key={ins.id} img={`http://localhost:3030${ins.image}`} name={ins.name} title={ins.job} desc={ins.description} />
+                        </SwiperSlide>
+                    )
+                }
+              
 
 
             </Swiper>            

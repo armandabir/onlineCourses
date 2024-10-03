@@ -8,7 +8,7 @@ import {faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import Button from "./Button";
 library.add(fas,far)
 
-export default function Card({img,fav,title,stars=0,vote=0,name="",date="",price}){
+export default function Card({img,fav,title,stars=0,vote=0,name="",price}){
     
 function mystars(num){
     let arman=[]
@@ -48,8 +48,8 @@ function mystars(num){
                 {!fav && 
                     (
                         <>
-                            <h3>آموزش HTML از صفر تا صد</h3>
-                            <p><FontAwesomeIcon className="text-orange-500" icon="fa-regular fa-user" />  مدرس: <span className="text-orange-500">مانی میرجوادی</span></p>
+                            <h3>{title}</h3>
+                            <p><FontAwesomeIcon className="text-orange-500" icon="fa-regular fa-user" />  مدرس: <span className="text-orange-500">{name}</span></p>
                             <p><FontAwesomeIcon className="text-orange-500" icon="fa-regular fa-clock" />  شروع دوره: 5 اسفند 1402</p>
                         </>
                     )

@@ -6,10 +6,10 @@ export default function MastersCard({name,title,img,desc,mail}){
                 <img src={img} alt="" />
             </div>
             <div className={styles.content}>
-                <h3>متیو ای. مک نات</h3>
-                <h4>جاوا اسکریپت پیشرفته</h4>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
-                <p>Professor@Matthew E. McNatt</p>
+                <h3>{name}</h3>
+                <h4>{title}</h4>
+                <p>{desc}</p>
+                <p>{mail}</p>
             </div>
         </div>
     )

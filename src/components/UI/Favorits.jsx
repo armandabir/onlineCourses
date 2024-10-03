@@ -8,8 +8,25 @@ import "swiper/css";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './../styles/swiperCustom.scss'
+import { useEffect, useState } from "react"
+import { data } from "autoprefixer"
 
 export default function Favorits (){
+    const [favs,setFaves]=useState([]);
+    
+    async function fechFaves(){
+        const res = await fetch("http://localhost:3030/favs")
+        const data = await res.json();
+        setFaves(data);
+    }
+
+
+    useEffect(()=>{
+        fechFaves()
+    },[])
+    console.log(favs)
+
+
     return (
         <div className={styles.favorits}>
             <h2>محبوب ترین ها</h2>
@@ -24,26 +41,14 @@ export default function Favorits (){
                     breakpoints={{640:{ slidesPerView: 4,
                         spaceBetween: 30}}}
                 >
-                    <SwiperSlide>
-                        <Card title=" آموزش برنامه نویسی جاوا اسکریپت ب..." img={img1} stars={4}  price="499,000" vote={120} fav/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Card title=" آموزش برنامه نویسی جاوا اسکریپت ب..." img={img1} stars={4}  price="499,000" vote={120} fav/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Card title=" آموزش برنامه نویسی جاوا اسکریپت ب..." img={img1} stars={4}  price="499,000" vote={120} fav/>
-                    </SwiperSlide>
 
-                    <SwiperSlide>
-                        <Card title=" آموزش برنامه نویسی جاوا اسکریپت ب..." img={img1} stars={4}  price="499,000" vote={120} fav/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Card title=" آموزش برنامه نویسی جاوا اسکریپت ب..." img={img1} stars={4}  price="499,000" vote={120} fav/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Card title=" آموزش برنامه نویسی جاوا اسکریپت ب..." img={img1} stars={4}  price="499,000" vote={120} fav/>
-                    </SwiperSlide>
-
+                    {
+                        favs.map((fav)=>
+                            <SwiperSlide key={fav.id}>
+                                 <Card title={fav.title} img={`http://localhost:3030${fav.image}`} stars={Math.trunc(fav.stars)}  price={fav.price} vote={fav.participants} fav/>
+                            </SwiperSlide>  
+                        )
+                    }
 
                 </Swiper>            
             </div>
